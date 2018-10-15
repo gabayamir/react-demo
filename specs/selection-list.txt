@@ -1,0 +1,117 @@
+<XXXSelectionList>
+
+</XXXSelectionList>
+
+type ChangedEvent = {
+	selectedDataItems: Array<any>,
+	prevSelectedDataItems: Array<any>,
+	...
+}
+
+
+type MyContentPanelProps = {
+	images: Array<ImageDataItem>,
+	videos: Array<VideoDataItem>,
+	sound: Array<SoundDataItem>,
+	showMatureContent: boolean;
+};
+
+const FetchMoreButtonKey = generateUniqueKey();
+
+class MyContentPanel extends ReactComponent<MyContentPanelProps>
+{
+	static getImageItemId (dataItem) {
+		return dataItem.id;
+	}
+	
+	renderImagesItem (dataItem, contextualData) {
+		
+		if (!dataItem.hasMatureContent || this.props.showMatureContent)
+		{
+			return (<ImageView ...>);
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	render () {
+		
+		return (
+			<SelectionList
+				value={}
+				focusedItem={FetchMoreButtonKey}
+				disabledItems={...}
+				onChange={function (event: ChangedEvent) {
+					
+				});
+				onFocus={function (event: FocusEvent) {
+					
+				});
+				orientation="Horizontal"
+			>
+				<SelectableItem
+					id={23}
+					renderItem={function (contextualData) {
+						
+						if (contextualData.isSelected)
+						{
+							return (<div>amir gabay selected</div>);
+						}
+						else
+						{
+							return (<div>amir gabay selected</div>);
+						}
+					});
+				/>
+				<Separator
+				/>
+				<SelectionListItemsList
+					
+					dataSource={[specificImageItem]}
+				/>
+				<Separator
+				/>
+				<SelectionListItemsList
+					idFunction={getImageItemId}
+					dataSource={this.props.videos}
+				/>
+				<MyCoolSeparator
+				/>
+				<SelectionListItemsList
+					dataSource={this.props.sound}
+				/>
+				
+				{/* a list of selectable images */}
+				<SelectableItemsList
+					dataSource={this.props.images}
+					renderItem={this.renderImagesItem.bind(this));
+					idFunction={MyContentPanel.getImageItemId}
+				/>
+				
+				<SelectionListFocusable
+					id={FetchMoreButtonKey}
+					renderItem={(context) => {
+						return (
+							<div
+								onClick={() => {
+									this.fetchMoreImages();
+								}}
+							>
+								Fetch More Images
+							</div>
+						);
+					});
+					handleEnter={() => {
+						this.fetchMoreImages();
+					});
+				/>
+				
+			</SelectionList>
+		);
+		
+	}
+}
+
+

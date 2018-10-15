@@ -1,0 +1,32 @@
+{
+  "name": "react-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/lodash": "^4.14.117",
+    "@types/react": "^16.4.15",
+    "@types/react-dom": "^16.0.8",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "@stylable/core": "^0.1.10",
+    "@stylable/webpack-plugin": "^0.1.11",
+    "@ts-tools/webpack-loader": "^0.3.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "gulp": "^3.9.1",
+    "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.1.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

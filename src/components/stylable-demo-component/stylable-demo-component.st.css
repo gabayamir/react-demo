@@ -1,0 +1,17 @@
+.root
+{
+    background: red;
+}
+
+.footer
+{
+    text-align: center;
+
+    /* Footer now supports states 'loading' and 'error' */
+    -st-states: loading error;
+}
+
+.footer:loading
+{
+    background: blue;
+}

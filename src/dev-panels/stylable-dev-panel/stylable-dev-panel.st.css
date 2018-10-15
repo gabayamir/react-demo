@@ -1,0 +1,25 @@
+:import {
+    -st-from: "../../components/stylable-demo-component/stylable-demo-component.st.css";
+    -st-default: SelectionList;
+}
+
+.my-stylable-demo-component
+{
+    -st-extends: SelectionList;
+
+    background: red;
+}
+
+.my-stylable-demo-component::footer
+{
+    background: lime;
+}
+
+.my-stylable-demo-component::footer:loading
+{    background: wheat;
+}
+
+.my-stylable-demo-component
+{
+    border: 5px solid black;
+}
