@@ -1,6 +1,6 @@
 # SelectionList Component Specification
 
-A component which allows the user to take action by choosing an item from a list. The SelectionList will usually be displayed inside a Popup component.
+A component which allows the user to take action by choosing an item or multiple items from a list.
 
 * [Elements](#elements)
 * [API](#api)
@@ -25,7 +25,8 @@ A component which allows the user to take action by choosing an item from a list
 | Name | Type | Default | Required | Description |
 | -- | -- | -- | -- | -- |
 | value | string | null | no | id/s of the selected item/s |
-| onChange | (event: ChangeEvent) => void | NOP | no | Triggered when an item is selected in the list |
+| onSelectionChange | (event: ChangeEvent) => void | NOP | no | Triggered when an item is selected in the list |
+| onFocusChange | (event: FocusEvent) => void | NOP | no | Triggered when the focused item is changed |
 | multiple | boolean | false | no | Not Supported. Whether the selection list supports a single or multiple selections. When true, adds the aria-multiselectable='true' on the root element.
 | orientation | enum | Vertical | no | The orientation is used mostly for assistive technologies. Changing to Horizontal will change the behavior of keyboard navigation and add an aria-orientation attribute to the root with the 'horizontal' value |
 | typeAhead | boolean | true | no | Enables keyboard type-ahead |
